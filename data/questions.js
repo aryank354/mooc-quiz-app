@@ -2,85 +2,1219 @@
 // Add at least 50+ questions for random selection
 
 export const questionsDatabase = [
+  // ========== WEEK 0: ASSIGNMENT 0 ==========
   {
     id: 1,
-    question: "What is the primary purpose of React?",
-    options: ["Database management", "Building user interfaces", "Server-side rendering", "Network protocols"],
-    correctAnswer: 1
+    week: 0,
+    assignment: 0,
+    question: "Transplantation experiments are used to find",
+    options: ["potential range", "effective range", "actual range", "economic range"],
+    correctAnswer: 0
   },
   {
     id: 2,
-    question: "Which hook is used for side effects in React?",
-    options: ["useState", "useEffect", "useContext", "useReducer"],
-    correctAnswer: 1
+    week: 0,
+    assignment: 0,
+    question: "Which of these is not a characteristic of fitness?",
+    options: [
+      "Fitness is environment-specific.",
+      "Fitness is species-specific.",
+      "Higher reproductive rate means higher fitness.",
+      "Fitness should be measured across several generations."
+    ],
+    correctAnswer: 2
   },
   {
     id: 3,
-    question: "What does JSX stand for?",
-    options: ["Java Syntax Extension", "JavaScript XML", "JSON Syntax", "JavaScript Extension"],
-    correctAnswer: 1
+    week: 0,
+    assignment: 0,
+    question: "The hierarchical system was given by",
+    options: ["Simon", "Watson", "Hutchinson", "Humboldt"],
+    correctAnswer: 0
   },
   {
     id: 4,
-    question: "What is the virtual DOM?",
-    options: ["A programming language", "A lightweight copy of the actual DOM", "A database", "A server"],
+    week: 0,
+    assignment: 0,
+    question: "Hamilton's rule can be stated as",
+    options: ["rB < C", "rB > C", "rB = C", "rB + C = 0"],
     correctAnswer: 1
   },
   {
     id: 5,
-    question: "Which method is used to update state in class components?",
-    options: ["this.state", "this.setState", "this.updateState", "this.changeState"],
-    correctAnswer: 1
-  },
-  {
-    id: 6,
-    question: "What is a React component?",
-    options: ["A database table", "A reusable piece of UI", "A styling framework", "A server endpoint"],
-    correctAnswer: 1
-  },
-  {
-    id: 7,
-    question: "What is the purpose of props in React?",
-    options: ["To style components", "To pass data between components", "To manage global state", "To handle routing"],
-    correctAnswer: 1
-  },
-  {
-    id: 8,
-    question: "What does npm stand for?",
-    options: ["Node Package Manager", "New Programming Method", "Network Protocol Manager", "Node Program Module"],
+    week: 0,
+    assignment: 0,
+    question: "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. As we move up the food chain,",
+    options: [
+      "available energy decreases",
+      "available energy increases",
+      "available energy remains same",
+      "available energy is zero everywhere"
+    ],
     correctAnswer: 0
   },
   {
-    id: 9,
-    question: "Which of the following is NOT a JavaScript data type?",
-    options: ["String", "Boolean", "Character", "Number"],
+    id: 6,
+    week: 0,
+    assignment: 0,
+    question: "The logistic growth equation, when plotted, appears",
+    options: ["I shaped", "J shaped", "S shaped", "O shaped"],
     correctAnswer: 2
   },
   {
-    id: 10,
-    question: "What is the purpose of useCallback hook?",
-    options: ["To fetch data", "To memoize functions", "To update state", "To handle events"],
+    id: 7,
+    week: 0,
+    assignment: 0,
+    question: "The climax near Tindni village is being controlled by disturbance by cattle. This is an example of",
+    options: ["climatic climax", "edaphic climax", "disclimax", "catastrophic climax"],
+    correctAnswer: 2
+  },
+  {
+    id: 8,
+    week: 0,
+    assignment: 0,
+    question: "\"Quick movement over large distances, often across unsuitable terrain\" is a description of",
+    options: ["diffusion", "secular dispersal", "jump dispersal", "drifting"],
+    correctAnswer: 2
+  },
+  {
+    id: 9,
+    week: 0,
+    assignment: 0,
+    question: "Captive breeding is an example of",
+    options: ["in-situ conservation", "ex-situ conservation", "in-situ preservation", "ex-situ preservation"],
     correctAnswer: 1
   },
-  // Add more questions here - duplicating for demo (total 50+)
-  ...Array.from({ length: 40 }, (_, i) => ({
-    id: i + 11,
-    question: `Sample MOOC Question ${i + 11}: What is the correct approach for this scenario?`,
+  {
+    id: 10,
+    week: 0,
+    assignment: 0,
+    question: "The demographic transition sees a society move from",
     options: [
-      `Option A - First approach for question ${i + 11}`,
-      `Option B - Second approach for question ${i + 11}`,
-      `Option C - Third approach for question ${i + 11}`,
-      `Option D - Fourth approach for question ${i + 11}`
+      "high birth rate, low death rate to low birth rate, low death rate",
+      "low birth rate, high death rate to low birth rate, low death rate",
+      "high birth rate, high death rate to low birth rate, low death rate",
+      "high birth rate, high death rate to low birth rate, high death rate"
     ],
-    correctAnswer: Math.floor(Math.random() * 4)
-  }))
-];
+    correctAnswer: 2
+  },
 
-// Instructions for adding your questions:
-// 1. Replace the sample questions with your actual MOOC questions
-// 2. Each question should have:
-//    - id: unique number
-//    - question: the question text
-//    - options: array of 4 options
-//    - correctAnswer: index (0-3) of the correct answer
-// 3. Add as many questions as you want (minimum 50 for best experience)
+  // ========== WEEK 1: ASSIGNMENT 1 ==========
+  {
+    id: 11,
+    week: 1,
+    assignment: 1,
+    question: "Which of these is not a characteristic of fitness?",
+    options: [
+      "Fitness is environment-specific.",
+      "Fitness is species-specific.",
+      "Higher reproductive rate means higher fitness.",
+      "Fitness should be measured across several generations."
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 12,
+    week: 1,
+    assignment: 1,
+    question: "Who amongst these is considered the father of Biogeography?",
+    options: ["Theophrastus", "Linnaeus", "Malthus", "Humboldt"],
+    correctAnswer: 3
+  },
+  {
+    id: 13,
+    week: 1,
+    assignment: 1,
+    question: "In the Greek word root of Ecology, Oikos refers to",
+    options: ["household", "preservation", "environment", "study"],
+    correctAnswer: 0
+  },
+  {
+    id: 14,
+    week: 1,
+    assignment: 1,
+    question: "In the Greek word root of Ecology, logos refers to",
+    options: ["household", "preservation", "environment", "study"],
+    correctAnswer: 3
+  },
+  {
+    id: 15,
+    week: 1,
+    assignment: 1,
+    question: "Which of these is not a step in natural selection?",
+    options: ["variation", "underpopulation", "struggle for existence", "survival of the fittest"],
+    correctAnswer: 1
+  },
+  {
+    id: 16,
+    week: 1,
+    assignment: 1,
+    question: "Ecology is the scientific study of _____ that determine the distribution and abundance of organisms.",
+    options: ["statics", "interactions", "dynamics", "habitat"],
+    correctAnswer: 1
+  },
+  {
+    id: 17,
+    week: 1,
+    assignment: 1,
+    question: "Which of these is not a characteristic of fitness?",
+    options: [
+      "Fitness is environment-specific.",
+      "Fitness is species-specific.",
+      "Fitness works on traits such as size and speed.",
+      "Fitness should be measured across several generations."
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 18,
+    week: 1,
+    assignment: 1,
+    question: "Ecology is the scientific study of interactions among organisms and their _____.",
+    options: ["habitat", "niche", "environment", "population"],
+    correctAnswer: 2
+  },
+  {
+    id: 19,
+    week: 1,
+    assignment: 1,
+    question: "\"Enquiry into plants\" is a book written by",
+    options: ["Theophrastus", "Linnaeus", "Malthus", "Humboldt"],
+    correctAnswer: 0
+  },
+  {
+    id: 20,
+    week: 1,
+    assignment: 1,
+    question: "Which of these is not a kind of selection?",
+    options: ["directional", "stochastic", "disruptive", "stabilising"],
+    correctAnswer: 1
+  },
+
+  // ========== WEEK 2: ASSIGNMENT 2 ==========
+  {
+    id: 21,
+    week: 2,
+    assignment: 2,
+    question: "Hierarchy emerges almost inevitably through a wide variety of evolutionary processes, for the simple reason that hierarchical structures are...........",
+    options: ["perfect", "imperfect", "stable", "unstable"],
+    correctAnswer: 2
+  },
+  {
+    id: 22,
+    week: 2,
+    assignment: 2,
+    question: "The hierarchical system was given by",
+    options: ["Simon", "Watson", "Hutchinson", "Humboldt"],
+    correctAnswer: 0
+  },
+  {
+    id: 23,
+    week: 2,
+    assignment: 2,
+    question: "The emergent principle can be stated as",
+    options: ["Whole = sum of parts", "Whole < sum of parts", "Whole > sum of parts", "None of these"],
+    correctAnswer: 2
+  },
+  {
+    id: 24,
+    week: 2,
+    assignment: 2,
+    question: "\"the diversity that exists within an ecosystem\" is",
+    options: ["alpha (α) biodiversity", "beta (β) biodiversity", "gamma (γ) biodiversity", "delta (δ) biodiversity"],
+    correctAnswer: 0
+  },
+  {
+    id: 25,
+    week: 2,
+    assignment: 2,
+    question: "The mitochondrion is a / an",
+    options: ["Sub-cellular organelle", "Cell", "Tissue", "Organ"],
+    correctAnswer: 0
+  },
+  {
+    id: 26,
+    week: 2,
+    assignment: 2,
+    question: "For more biodiversity, the level of disturbance should be",
+    options: ["less", "intermediate", "more", "none of these"],
+    correctAnswer: 1
+  },
+  {
+    id: 27,
+    week: 2,
+    assignment: 2,
+    question: "There is more biodiversity in areas with",
+    options: [
+      "less competition, less predation",
+      "less competition, more predation",
+      "more competition, more predation",
+      "more competition, less predation"
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 28,
+    week: 2,
+    assignment: 2,
+    question: "\"the diversity that exists among different geographies\" is",
+    options: ["alpha (α) biodiversity", "beta (β) biodiversity", "gamma (γ) biodiversity", "delta (δ) biodiversity"],
+    correctAnswer: 2
+  },
+  {
+    id: 29,
+    week: 2,
+    assignment: 2,
+    question: "The laboratory approach to Ecology uses",
+    options: ["equations", "models", "observations", "experiments"],
+    correctAnswer: 3
+  },
+  {
+    id: 30,
+    week: 2,
+    assignment: 2,
+    question: "\"groups of actually or potentially interbreeding natural populations, which are reproductively isolated from other such groups\" is a definition of",
+    options: ["cells", "species", "ecosystems", "biomes"],
+    correctAnswer: 1
+  },
+
+  // ========== WEEK 3: ASSIGNMENT 3 ==========
+  {
+    id: 31,
+    week: 3,
+    assignment: 3,
+    question: "I observe a monkey take a tick out of another monkey's head and eat it. In the social context, this behaviour would be called",
+    options: ["tick hunting", "auto grooming", "allo grooming", "foraging"],
+    correctAnswer: 2
+  },
+  {
+    id: 32,
+    week: 3,
+    assignment: 3,
+    question: "The scientific study of animal behaviour is called",
+    options: ["behaviourism", "ecology", "ethology", "prey-predator dynamics"],
+    correctAnswer: 2
+  },
+  {
+    id: 33,
+    week: 3,
+    assignment: 3,
+    question: "Hamilton's rule can be stated as",
+    options: ["rB < C", "rB > C", "rB = C", "rB + C = 0"],
+    correctAnswer: 1
+  },
+  {
+    id: 34,
+    week: 3,
+    assignment: 3,
+    question: "Harmonious interactions occur where",
+    options: [
+      "at least one participant is benefited",
+      "at least one participant is unharmed",
+      "both participants are benefitted",
+      "both participants are unharmed"
+    ],
+    correctAnswer: 3
+  },
+  {
+    id: 35,
+    week: 3,
+    assignment: 3,
+    question: "The interaction between exotic shrubs and trees through the action of seed predators is an example of",
+    options: ["infraspecific competition", "apparent competition", "disguised competition", "harmonious competition"],
+    correctAnswer: 1
+  },
+  {
+    id: 36,
+    week: 3,
+    assignment: 3,
+    question: "An inventory of behaviours exhibited by an animal during a behaviour exercise is called",
+    options: ["ecogram", "ethogram", "behaviourogram", "animalogram"],
+    correctAnswer: 1
+  },
+  {
+    id: 37,
+    week: 3,
+    assignment: 3,
+    question: "Trampling of grass due to the movement of animals is an example of",
+    options: ["mutualism", "amensalism", "commensalism", "protocooperation"],
+    correctAnswer: 1
+  },
+  {
+    id: 38,
+    week: 3,
+    assignment: 3,
+    question: "I observe a bird take a tick out of another bird's head and eat it. In the social context, this behaviour would be called",
+    options: ["tick hunting", "auto grooming", "allo grooming", "foraging"],
+    correctAnswer: 2
+  },
+  {
+    id: 39,
+    week: 3,
+    assignment: 3,
+    question: "Birds on giraffe are an example of",
+    options: ["colony", "commensalism", "protocooperation", "allelopathy"],
+    correctAnswer: 2
+  },
+  {
+    id: 40,
+    week: 3,
+    assignment: 3,
+    question: "Egrets with buffaloes are an example of",
+    options: ["colony", "commensalism", "protocooperation", "allelopathy"],
+    correctAnswer: 1
+  },
+
+  // ========== WEEK 4: ASSIGNMENT 4 ==========
+  {
+    id: 41,
+    week: 4,
+    assignment: 4,
+    question: "If we all became vegetarians, we'll be able to support our large populations. This can be explained through",
+    options: ["10% rule", "1% rule", "trophic cascade", "biodiversity"],
+    correctAnswer: 0
+  },
+  {
+    id: 42,
+    week: 4,
+    assignment: 4,
+    question: "Net primary productivity is given by",
+    options: ["APAR × LUE", "APAR + LUE", "APAR - LUE", "APAR / LUE"],
+    correctAnswer: 0
+  },
+  {
+    id: 43,
+    week: 4,
+    assignment: 4,
+    question: "Trees → Birds → Parasites → Hyperparasites represents",
+    options: [
+      "upright pyramid of numbers",
+      "inverted pyramid of numbers",
+      "spindle pyramid of numbers",
+      "dumb-bell pyramid of numbers"
+    ],
+    correctAnswer: 1
+  },
+  {
+    id: 44,
+    week: 4,
+    assignment: 4,
+    question: "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. As we move up the food chain,",
+    options: [
+      "available energy decreases",
+      "available energy increases",
+      "available energy remains same",
+      "available energy is zero everywhere"
+    ],
+    correctAnswer: 0
+  },
+  {
+    id: 45,
+    week: 4,
+    assignment: 4,
+    question: "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. In this food chain,",
+    options: [
+      "frog is producer",
+      "frog is consumer and carnivore",
+      "frog is consumer and herbivore",
+      "frog is decomposer"
+    ],
+    correctAnswer: 1
+  },
+  {
+    id: 46,
+    week: 4,
+    assignment: 4,
+    question: "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. In this food chain,",
+    options: [
+      "more number of hawks than grasshoppers can be supported",
+      "more number of grasshoppers than hawks can be supported",
+      "equal number of hawks and grasshoppers can be supported",
+      "none of these"
+    ],
+    correctAnswer: 1
+  },
+  {
+    id: 47,
+    week: 4,
+    assignment: 4,
+    question: "At the compensation point,",
+    options: [
+      "photosynthesis = respiration",
+      "photosynthesis < respiration",
+      "photosynthesis > respiration",
+      "photosynthesis = 0"
+    ],
+    correctAnswer: 0
+  },
+  {
+    id: 48,
+    week: 4,
+    assignment: 4,
+    question: "Glacial lakes are typical examples of",
+    options: ["eutrophic lakes", "hypereutrophic lakes", "oligotrophic lakes", "mesotrophic lakes"],
+    correctAnswer: 2
+  },
+  {
+    id: 49,
+    week: 4,
+    assignment: 4,
+    question: "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. In this food chain,",
+    options: [
+      "hawk is producer",
+      "hawk is consumer and carnivore",
+      "hawk is consumer and herbivore",
+      "hawk is decomposer"
+    ],
+    correctAnswer: 1
+  },
+  {
+    id: 50,
+    week: 4,
+    assignment: 4,
+    question: "Tree → Frugivorous birds → Hawk represents",
+    options: [
+      "upright pyramid of numbers",
+      "inverted pyramid of numbers",
+      "spindle pyramid of numbers",
+      "dumb-bell pyramid of numbers"
+    ],
+    correctAnswer: 2
+  },
+
+  // ========== WEEK 5: ASSIGNMENT 5 ==========
+  {
+    id: 51,
+    week: 5,
+    assignment: 5,
+    question: "Which of these is true?",
+    options: [
+      "Physiological longevity > Ecological longevity",
+      "Physiological longevity = Ecological longevity",
+      "Physiological longevity < Ecological longevity",
+      "a or b"
+    ],
+    correctAnswer: 3
+  },
+  {
+    id: 52,
+    week: 5,
+    assignment: 5,
+    question: "A sampling procedure such that each possible combination of sampling units out of the population has the same chance of being selected is referred to as",
+    options: ["Simple random sampling", "Systematic sampling", "Stratified sampling", "Multistage sampling"],
+    correctAnswer: 0
+  },
+  {
+    id: 53,
+    week: 5,
+    assignment: 5,
+    question: "Cover board surveys are typically used for sampling",
+    options: ["herpetofauna", "fishes", "large mammals", "carnivores"],
+    correctAnswer: 0
+  },
+  {
+    id: 54,
+    week: 5,
+    assignment: 5,
+    question: "_________ is how close the measured values are to the correct value.",
+    options: ["Accuracy", "Precision", "Bias", "Variance"],
+    correctAnswer: 0
+  },
+  {
+    id: 55,
+    week: 5,
+    assignment: 5,
+    question: "The logistic growth equation, when plotted, appears",
+    options: ["I shaped", "J shaped", "S shaped", "O shaped"],
+    correctAnswer: 2
+  },
+  {
+    id: 56,
+    week: 5,
+    assignment: 5,
+    question: "The minimum replacement level fertility for a population to grow should be greater than",
+    options: ["1", "2", "3", "4"],
+    correctAnswer: 1
+  },
+  {
+    id: 57,
+    week: 5,
+    assignment: 5,
+    question: "The juvenile mortality rate is the annual number of deaths of juveniles per",
+    options: ["100 births", "1000 births", "100 live births", "1000 live births"],
+    correctAnswer: 3
+  },
+  {
+    id: 58,
+    week: 5,
+    assignment: 5,
+    question: "_______ employs a simple rule of selecting every kth unit starting with a number chosen at random from 1 to k as the random start.",
+    options: ["Simple random sampling", "Systematic sampling", "Stratified sampling", "Multistage sampling"],
+    correctAnswer: 1
+  },
+  {
+    id: 59,
+    week: 5,
+    assignment: 5,
+    question: "Pan traps are used for sampling",
+    options: ["bees", "butterflies", "non-pollinator insects", "pollinator insects"],
+    correctAnswer: 3
+  },
+  {
+    id: 60,
+    week: 5,
+    assignment: 5,
+    question: "Which of these is not a measure of absolute population density?",
+    options: ["total count", "pelt count", "capture-recapture method", "removal method"],
+    correctAnswer: 1
+  },
+
+  // ========== WEEK 6: ASSIGNMENT 6 ==========
+  {
+    id: 61,
+    week: 6,
+    assignment: 6,
+    question: "Which of these is correct?",
+    options: [
+      "Fundamental niche > Realised niche",
+      "Fundamental niche = Realised niche",
+      "Fundamental niche < Realised niche",
+      "a or b"
+    ],
+    correctAnswer: 3
+  },
+  {
+    id: 62,
+    week: 6,
+    assignment: 6,
+    question: "Which of these is not a characteristic of pioneer species",
+    options: [
+      "ability to grow on bare rocks",
+      "ability to tolerate extreme temperatures",
+      "large size",
+      "short life span"
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 63,
+    week: 6,
+    assignment: 6,
+    question: "A climax caused by wildfires is an example of",
+    options: ["climatic climax", "edaphic climax", "disclimax", "catastrophic climax"],
+    correctAnswer: 3
+  },
+  {
+    id: 64,
+    week: 6,
+    assignment: 6,
+    question: "Importance value varies from",
+    options: ["0 to 10", "0 to 50", "0 to 100", "0 to 300"],
+    correctAnswer: 3
+  },
+  {
+    id: 65,
+    week: 6,
+    assignment: 6,
+    question: "When compared to generalist species, specialist species have",
+    options: ["narrower niches", "broader niches", "same-size niches", "none of these"],
+    correctAnswer: 0
+  },
+  {
+    id: 66,
+    week: 6,
+    assignment: 6,
+    question: "The climax near Tindni village is being controlled by disturbance by cattle. This is an example of",
+    options: ["climatic climax", "edaphic climax", "disclimax", "catastrophic climax"],
+    correctAnswer: 2
+  },
+  {
+    id: 67,
+    week: 6,
+    assignment: 6,
+    question: "Lithosere is an example of",
+    options: ["hydrosere", "xerosere", "psammosere", "halosere"],
+    correctAnswer: 1
+  },
+  {
+    id: 68,
+    week: 6,
+    assignment: 6,
+    question: "A species found most frequently in a particular community, but also present occasionally in others is called",
+    options: ["accidental species", "indifferent species", "selective species", "exclusive species"],
+    correctAnswer: 2
+  },
+  {
+    id: 69,
+    week: 6,
+    assignment: 6,
+    question: "Which of these depicts correctly the lithosere primary succession?",
+    options: [
+      "Rock → Crustose lichen → Foliose lichen → Moss → Herbaceous stage → Shrub → Woodland → Climax",
+      "Rock → Foliose lichen → Crustose lichen → Moss → Herbaceous stage → Shrub → Woodland → Climax",
+      "Moss → Crustose lichen → Foliose lichen → Rock → Herbaceous stage → Shrub → Woodland → Climax",
+      "Rock → Crustose lichen → Foliose lichen → shrub → Herbaceous stage → Moss → woodland → climax"
+    ],
+    correctAnswer: 0
+  },
+  {
+    id: 70,
+    week: 6,
+    assignment: 6,
+    question: "Importance value can be written as",
+    options: [
+      "Relative density + Relative frequency X Relative dominance",
+      "Relative density X Relative frequency + Relative dominance",
+      "Relative density + Relative frequency + Relative dominance",
+      "Relative density X Relative frequency X Relative dominance"
+    ],
+    correctAnswer: 2
+  },
+
+  // ========== WEEK 7: ASSIGNMENT 7 ==========
+  {
+    id: 71,
+    week: 7,
+    assignment: 7,
+    question: "Which of these is not a physical factor of habitat?",
+    options: ["soil", "moisture", "predators", "temperature"],
+    correctAnswer: 2
+  },
+  {
+    id: 72,
+    week: 7,
+    assignment: 7,
+    question: "The movement of individuals away from their place of birth or hatching or seed production into a new habitat or area to survive and reproduce is called",
+    options: ["translocation", "migration", "dispersal", "drifting"],
+    correctAnswer: 2
+  },
+  {
+    id: 73,
+    week: 7,
+    assignment: 7,
+    question: "The movement of lions across the Gir landscape is an example of",
+    options: ["diffusion", "secular dispersal", "jump dispersal", "drifting"],
+    correctAnswer: 0
+  },
+  {
+    id: 74,
+    week: 7,
+    assignment: 7,
+    question: "I tried growing vegetables under my teak plantation, but the vegetable plants died out. I should be concerned about",
+    options: ["autophagy", "allelophagy", "autopathy", "allelopathy"],
+    correctAnswer: 3
+  },
+  {
+    id: 75,
+    week: 7,
+    assignment: 7,
+    question: "The regular, seasonal movement of animals, often along fixed routes is called",
+    options: ["translocation", "migration", "dispersal", "drifting"],
+    correctAnswer: 1
+  },
+  {
+    id: 76,
+    week: 7,
+    assignment: 7,
+    question: "\"The rate of any biological process is limited by that factor in least amount relative to requirement, so there is a single limiting factor.\" This is the statement for",
+    options: [
+      "Liebig's law of the minimum",
+      "Liebig's law of the maximum",
+      "Shelford's law of tolerance",
+      "Shelford's law of intolerance"
+    ],
+    correctAnswer: 0
+  },
+  {
+    id: 77,
+    week: 7,
+    assignment: 7,
+    question: "\"Quick movement over large distances, often across unsuitable terrain\" is a description of",
+    options: ["diffusion", "secular dispersal", "jump dispersal", "drifting"],
+    correctAnswer: 2
+  },
+  {
+    id: 78,
+    week: 7,
+    assignment: 7,
+    question: "\"The geographical distribution of a species will be controlled by that environmental factor for which the organism has the narrowest range of tolerance.\" This is the statement for",
+    options: [
+      "Liebig's law of the minimum",
+      "Liebig's law of the maximum",
+      "Shelford's law of tolerance",
+      "Shelford's law of intolerance"
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 79,
+    week: 7,
+    assignment: 7,
+    question: "Good climate is a",
+    options: ["chemical factor", "demographic factor", "push factor", "pull factor"],
+    correctAnswer: 3
+  },
+  {
+    id: 80,
+    week: 7,
+    assignment: 7,
+    question: "Scarcity of food is a",
+    options: ["chemical factor", "demographic factor", "push factor", "pull factor"],
+    correctAnswer: 2
+  },
+
+  // ========== WEEK 8: ASSIGNMENT 8 ==========
+  {
+    id: 81,
+    week: 8,
+    assignment: 8,
+    question: "Zoo is an example of",
+    options: ["in-situ conservation", "ex-situ conservation", "in-situ preservation", "ex-situ preservation"],
+    correctAnswer: 1
+  },
+  {
+    id: 82,
+    week: 8,
+    assignment: 8,
+    question: "The \"subset of physical and biotic environmental factors that permit an animal (or plant) to survive and reproduce\" is the definition of",
+    options: ["habitat", "ecosystem", "biome", "biosphere"],
+    correctAnswer: 0
+  },
+  {
+    id: 83,
+    week: 8,
+    assignment: 8,
+    question: "Which of these correctly represents the process of habitat fragmentation and loss?",
+    options: [
+      "Original forest → Dissection → Perforation → Fragmentation → Attrition",
+      "Original forest → Dissection → Attrition → Fragmentation → Perforation",
+      "Original forest → Dissection → Perforation → Attrition → Fragmentation",
+      "Original forest → Dissection → Fragmentation → Perforation → Attrition"
+    ],
+    correctAnswer: 0
+  },
+  {
+    id: 84,
+    week: 8,
+    assignment: 8,
+    question: "The acronym HIPPO does not include",
+    options: ["habitat loss", "invasive species", "pollination", "pollution"],
+    correctAnswer: 2
+  },
+  {
+    id: 85,
+    week: 8,
+    assignment: 8,
+    question: "We prefer those areas for the creation of a conservation reserve where the level of threat is",
+    options: ["very high", "medium", "very low", "non-existent"],
+    correctAnswer: 1
+  },
+  {
+    id: 86,
+    week: 8,
+    assignment: 8,
+    question: "The acronym HIPPO does not include",
+    options: ["habitat loss", "habitat enhancement", "invasive species", "human over-population"],
+    correctAnswer: 1
+  },
+  {
+    id: 87,
+    week: 8,
+    assignment: 8,
+    question: "According to Leopold, which of these is not a tool of habitat management?",
+    options: ["fire", "gun", "cattle", "sickle"],
+    correctAnswer: 3
+  },
+  {
+    id: 88,
+    week: 8,
+    assignment: 8,
+    question: "Captive breeding is an example of",
+    options: ["in-situ conservation", "ex-situ conservation", "in-situ preservation", "ex-situ preservation"],
+    correctAnswer: 1
+  },
+  {
+    id: 89,
+    week: 8,
+    assignment: 8,
+    question: "Which of these is a stochastic factor?",
+    options: ["birth rate", "death rate", "population structure", "environmental fluctuation"],
+    correctAnswer: 3
+  },
+  {
+    id: 90,
+    week: 8,
+    assignment: 8,
+    question: "Which of these is a deterministic factor?",
+    options: ["environmental variation", "forest fire", "death rate", "diseases"],
+    correctAnswer: 2
+  },
+
+  // ========== WEEK 9: ASSIGNMENT 9 ==========
+  {
+    id: 91,
+    week: 9,
+    assignment: 9,
+    question: "Which of these is a positive check according to Malthus?",
+    options: ["late marriage", "war", "celibacy", "moral restraint"],
+    correctAnswer: 1
+  },
+  {
+    id: 92,
+    week: 9,
+    assignment: 9,
+    question: "________ determines which projects or developments require a full or partial impact assessment study.",
+    options: ["screening", "scoping", "reporting", "review"],
+    correctAnswer: 0
+  },
+  {
+    id: 93,
+    week: 9,
+    assignment: 9,
+    question: "Which of these is a pillar of sustainability",
+    options: ["social sustainability", "industrial sustainability", "agricultural sustainability", "trans-boundary sustainability"],
+    correctAnswer: 0
+  },
+  {
+    id: 94,
+    week: 9,
+    assignment: 9,
+    question: "Which of these is not a pillar of sustainability?",
+    options: ["environmental sustainability", "economic sustainability", "trans-boundary sustainability", "social sustainability"],
+    correctAnswer: 2
+  },
+  {
+    id: 95,
+    week: 9,
+    assignment: 9,
+    question: "The book \"An Essay on the Principle of Population\" was written by",
+    options: ["Darwin", "Malthus", "Spencer", "Owens"],
+    correctAnswer: 1
+  },
+  {
+    id: 96,
+    week: 9,
+    assignment: 9,
+    question: "According to Malthusian model,",
+    options: [
+      "Population grows in geometric progression, food supply increases in arithmetic progression",
+      "Population grows in geometric progression, food supply increases in geometric progression",
+      "Population grows in arithmetic progression, food supply increases in arithmetic progression",
+      "Population grows in arithmetic progression, food supply increases in geometric progression"
+    ],
+    correctAnswer: 0
+  },
+  {
+    id: 97,
+    week: 9,
+    assignment: 9,
+    question: "The quantum of human impacts is given by",
+    options: ["I = P × A × T", "I = P + A + T", "I = P + A - T", "I = P - (A + T)"],
+    correctAnswer: 0
+  },
+  {
+    id: 98,
+    week: 9,
+    assignment: 9,
+    question: "____________is used to identify which potential impacts are relevant to assess.",
+    options: ["screening", "scoping", "reporting", "review"],
+    correctAnswer: 1
+  },
+  {
+    id: 99,
+    week: 9,
+    assignment: 9,
+    question: "The demographic transition sees a society move from",
+    options: [
+      "high birth rate, low death rate to low birth rate, low death rate",
+      "low birth rate, high death rate to low birth rate, low death rate",
+      "high birth rate, high death rate to low birth rate, low death rate",
+      "high birth rate, high death rate to low birth rate, high death rate"
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 100,
+    week: 9,
+    assignment: 9,
+    question: "Which of these is a preventive check according to Malthus?",
+    options: ["foresight", "vice", "misery", "flood"],
+    correctAnswer: 0
+  },
+
+  // ========== WEEK 10: ASSIGNMENT 10 ==========
+  {
+    id: 101,
+    week: 10,
+    assignment: 10,
+    question: "Which of these is not a climatic forcing for Earth?",
+    options: ["changes in plate tectonics", "changes in Earth's orbit", "changes in Sun's orbit", "changes in Sun's strength"],
+    correctAnswer: 2
+  },
+  {
+    id: 102,
+    week: 10,
+    assignment: 10,
+    question: "\"The ability of a system to adjust to climate change (including climate variability and extremes) to moderate potential damages, to take advantage of opportunities, or to cope with the consequences\" is a definition for",
+    options: ["adaptive response", "adaptive capacity", "mitigative response", "mitigative capacity"],
+    correctAnswer: 1
+  },
+  {
+    id: 103,
+    week: 10,
+    assignment: 10,
+    question: "Which of these is not a principle of ecological restoration?",
+    options: ["ecological integrity", "short-term sustainability", "benefits and engages society", "informed by past and future"],
+    correctAnswer: 1
+  },
+  {
+    id: 104,
+    week: 10,
+    assignment: 10,
+    question: "Mesodebris in the context of plastic debris has fragments of size",
+    options: ["> 20 mm", "5 - 20 mm", "< 5 mm", "< 1 mm"],
+    correctAnswer: 1
+  },
+  {
+    id: 105,
+    week: 10,
+    assignment: 10,
+    question: "\"Any changes in natural or human systems that inadvertently increase vulnerability to climatic stimuli; an adaptation that does not succeed in reducing vulnerability but increases it instead\" is a definition for",
+    options: ["adaptation", "mitigation", "maladaptation", "malmitigation"],
+    correctAnswer: 2
+  },
+  {
+    id: 106,
+    week: 10,
+    assignment: 10,
+    question: "Which of these is not a principle of ecological restoration?",
+    options: ["ecological integrity", "long-term sustainability", "benefits and engages scientists", "informed by past and future"],
+    correctAnswer: 2
+  },
+  {
+    id: 107,
+    week: 10,
+    assignment: 10,
+    question: "Which of these is not a climatic forcing for Earth?",
+    options: ["changes in plate tectonics", "changes in Earth's orbit", "changes in Moon's orbit", "changes in Sun's strength"],
+    correctAnswer: 2
+  },
+  {
+    id: 108,
+    week: 10,
+    assignment: 10,
+    question: "Because of climate change, Mudumalai Tiger Reserve is suffering from frequent droughts. The management has built several artificial water holes for animals, and fills them up regularly with tankers. In the context of climate change, such an action would be called",
+    options: ["adaptation", "mitigation", "deceleration", "maladaptation"],
+    correctAnswer: 0
+  },
+  {
+    id: 109,
+    week: 10,
+    assignment: 10,
+    question: "Macrodebris in the context of plastic debris has fragments of size",
+    options: ["> 20 mm", "5 - 20 mm", "< 5 mm", "< 1 mm"],
+    correctAnswer: 0
+  },
+  {
+    id: 110,
+    week: 10,
+    assignment: 10,
+    question: "The government came up with a regulation that incandescent bulbs be replaced by LED bulbs, so that electricity consumption and release of carbon dioxide from power plants is reduced. In the context of climate change, such an action would be called",
+    options: ["adaptation", "mitigation", "deceleration", "maladaptation"],
+    correctAnswer: 1
+  },
+
+  // ========== WEEK 11: ASSIGNMENT 11 ==========
+  {
+    id: 111,
+    week: 11,
+    assignment: 11,
+    question: "Ludwig's ratchet predicts",
+    options: ["decreasing harvesting rate", "constant harvesting rate", "increasing harvesting rate", "fluctuating harvesting rate"],
+    correctAnswer: 2
+  },
+  {
+    id: 112,
+    week: 11,
+    assignment: 11,
+    question: "A pest population is called controlled when",
+    options: [
+      "it is not increasing",
+      "it is decreasing",
+      "it is not causing any economic damage",
+      "it is not causing excessive economic damage"
+    ],
+    correctAnswer: 3
+  },
+  {
+    id: 113,
+    week: 11,
+    assignment: 11,
+    question: "Which of these is not an impact of toxic chemicals?",
+    options: ["lethal effects", "sub-lethal effects", "reduction of existing stressors", "reduced fecundity"],
+    correctAnswer: 2
+  },
+  {
+    id: 114,
+    week: 11,
+    assignment: 11,
+    question: "Which of these is correct?",
+    options: [
+      "The maximum sustainable yield is near the beginning of the sigmoidal curve.",
+      "The maximum sustainable yield is near the mid-point of the sigmoidal curve.",
+      "The maximum sustainable yield is near the end of the sigmoidal curve.",
+      "None of these"
+    ],
+    correctAnswer: 1
+  },
+  {
+    id: 115,
+    week: 11,
+    assignment: 11,
+    question: "A root zone treatment plant is an example of",
+    options: ["phytoremediation", "biological control", "biomagnification", "bioaccumulation"],
+    correctAnswer: 0
+  },
+  {
+    id: 116,
+    week: 11,
+    assignment: 11,
+    question: "A pest population is called uncontrolled when",
+    options: [
+      "it is increasing",
+      "it is not decreasing",
+      "it is causing some economic damage",
+      "it is causing excessive economic damage"
+    ],
+    correctAnswer: 3
+  },
+  {
+    id: 117,
+    week: 11,
+    assignment: 11,
+    question: "The impact of El Nino on fishery collapse in Peru is explained by",
+    options: ["match hypothesis", "mismatch hypothesis", "match-mismatch hypothesis", "none of these"],
+    correctAnswer: 2
+  },
+  {
+    id: 118,
+    week: 11,
+    assignment: 11,
+    question: "A deciduous forest in Madhya Pradesh was converted to a mine. After the mining operations were over, the pits were filled up with soil and species of deciduous forest planted again. This is an example of",
+    options: ["recovery", "restoration", "enhancement", "replacement"],
+    correctAnswer: 1
+  },
+  {
+    id: 119,
+    week: 11,
+    assignment: 11,
+    question: "A deciduous forest in Madhya Pradesh was converted to a mine. After the mining operations were over, the pits were filled up with water and a lake was created. It is now visited by several migratory birds. This is an example of",
+    options: ["recovery", "restoration", "enhancement", "replacement"],
+    correctAnswer: 3
+  },
+  {
+    id: 120,
+    week: 11,
+    assignment: 11,
+    question: "Which of these is correct?",
+    options: ["R + G = M + F", "R + M = G + F", "R + F = M + G", "R + G + M + F = 0"],
+    correctAnswer: 0
+  },
+
+  // ========== WEEK 12: ASSIGNMENT 12 (REVISION) ==========
+  {
+    id: 121,
+    week: 12,
+    assignment: 12,
+    question: "Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. As we move up the food chain,",
+    options: [
+      "available energy decreases",
+      "available energy increases",
+      "available energy remains same",
+      "available energy is zero everywhere"
+    ],
+    correctAnswer: 0
+  },
+  {
+    id: 122,
+    week: 12,
+    assignment: 12,
+    question: "The government came up with a regulation that incandescent bulbs be replaced by LED bulbs, so that electricity consumption and release of carbon dioxide from power plants is reduced. In the context of climate change, such an action would be called",
+    options: ["adaptation", "mitigation", "deceleration", "maladaptation"],
+    correctAnswer: 1
+  },
+  {
+    id: 123,
+    week: 12,
+    assignment: 12,
+    question: "The hierarchical system was given by",
+    options: ["Simon", "Watson", "Hutchinson", "Humboldt"],
+    correctAnswer: 0
+  },
+  {
+    id: 124,
+    week: 12,
+    assignment: 12,
+    question: "Captive breeding is an example of",
+    options: ["in-situ conservation", "ex-situ conservation", "in-situ preservation", "ex-situ preservation"],
+    correctAnswer: 1
+  },
+  {
+    id: 125,
+    week: 12,
+    assignment: 12,
+    question: "The climax near Tindni village is being controlled by disturbance by cattle. This is an example of",
+    options: ["climatic climax", "edaphic climax", "disclimax", "catastrophic climax"],
+    correctAnswer: 2
+  },
+  {
+    id: 126,
+    week: 12,
+    assignment: 12,
+    question: "The demographic transition sees a society move from",
+    options: [
+      "high birth rate, low death rate to low birth rate, low death rate",
+      "low birth rate, high death rate to low birth rate, low death rate",
+      "high birth rate, high death rate to low birth rate, low death rate",
+      "high birth rate, high death rate to low birth rate, high death rate"
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 127,
+    week: 12,
+    assignment: 12,
+    question: "The logistic growth equation, when plotted, appears",
+    options: ["I shaped", "J shaped", "S shaped", "O shaped"],
+    correctAnswer: 2
+  },
+  {
+    id: 128,
+    week: 12,
+    assignment: 12,
+    question: "Hamilton's rule can be stated as",
+    options: ["rB < C", "rB > C", "rB = C", "rB + C = 0"],
+    correctAnswer: 1
+  },
+  {
+    id: 129,
+    week: 12,
+    assignment: 12,
+    question: "Which of these is not a characteristic of fitness?",
+    options: [
+      "Fitness is environment-specific.",
+      "Fitness is species-specific.",
+      "Higher reproductive rate means higher fitness.",
+      "Fitness should be measured across several generations."
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 130,
+    week: 12,
+    assignment: 12,
+    question: "\"Quick movement over large distances, often across unsuitable terrain\" is a description of",
+    options: ["diffusion", "secular dispersal", "jump dispersal", "drifting"],
+    correctAnswer: 2
+  },
+];

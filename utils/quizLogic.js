@@ -21,13 +21,16 @@ export const shuffleArray = (array) => {
  * @returns {Array} - Selected questions
  */
 export const selectRandomQuestions = (questions, count) => {
+  if (questions.length < count) {
+    console.warn(`Only ${questions.length} questions available, but ${count} requested`);
+  }
   const shuffled = shuffleArray(questions);
   return shuffled.slice(0, Math.min(count, questions.length));
 };
 
 /**
  * Shuffles the options of a question and tracks the correct answer
- * @param {Object} question - Question object
+ * @param {Object} question - Question object with week and assignment
  * @returns {Object} - Question with shuffled options
  */
 export const shuffleOptions = (question) => {
@@ -47,7 +50,7 @@ export const shuffleOptions = (question) => {
 
 /**
  * Calculates quiz results
- * @param {Array} questions - Array of questions
+ * @param {Array} questions - Array of questions with week/assignment info
  * @param {Object} answers - User's answers (questionId: answerIndex)
  * @returns {Object} - Results object with score and details
  */
@@ -61,6 +64,8 @@ export const calculateResults = (questions, answers) => {
     
     return {
       questionId: q.id,
+      week: q.week,
+      assignment: q.assignment,
       question: q.question,
       userAnswer: userAnswer !== undefined ? q.shuffledOptions[userAnswer] : 'Not answered',
       correctAnswer: q.shuffledOptions[q.correctAnswerIndex],
@@ -71,7 +76,7 @@ export const calculateResults = (questions, answers) => {
   
   const total = questions.length;
   const incorrect = total - correct;
-  const percentage = ((correct / total) * 100).toFixed(2);
+  const percentage = ((correct / total) * 100).toFixed(1);
   
   return {
     correct,
@@ -108,5 +113,27 @@ export const validateName = (name) => {
   return {
     isValid: true,
     error: null
+  };
+};
+
+/**
+ * Get statistics about questions by week
+ * @param {Array} questions - All questions
+ * @returns {Object} - Statistics object
+ */
+export const getQuestionStats = (questions) => {
+  const weekCounts = {};
+  
+  questions.forEach(q => {
+    if (!weekCounts[q.week]) {
+      weekCounts[q.week] = 0;
+    }
+    weekCounts[q.week]++;
+  });
+  
+  return {
+    total: questions.length,
+    byWeek: weekCounts,
+    weeks: Object.keys(weekCounts).sort((a, b) => a - b)
   };
 };
