@@ -1,4 +1,4 @@
-# 🌿 Ecology & Evolution MOOC Quiz App
+# 🌿 Wildlife Ecology MOOC Quiz App
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 
 **An interactive quiz application for NPTEL Ecology & Evolution Course (2025)**
 
-[Live Demo](#) • [Report Bug](#) • [Request Feature](#)
+🎮 [**Live Demo**](https://mooc-quiz-app.vercel.app/) • 🐛 [**Report Bug**](#) • 💡 [**Request Feature**](#)
 
 </div>
 
@@ -19,30 +19,32 @@
 
 - [About](#about)
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Question Database](#question-database)
+- [Customization](#customization)
 - [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
+- [Developer](#developer)
+- [Acknowledgments](#acknowledgments)
+- [Support](#support)
 
 ---
 
 ## 🎯 About
 
-This is a comprehensive quiz application built for students taking the **NPTEL Ecology & Evolution** course. The app helps students practice and prepare for their exams with a database of **130+ questions** covering all topics from **Week 0 to Week 12**.
+A comprehensive quiz application designed for students taking the **NPTEL Ecology & Evolution** course.  
+It offers **130+ curated questions** from **Week 0 to Week 12**, helping students prepare effectively for exams.
 
 ### Why This App?
 
-- 📚 **Comprehensive Coverage**: All 13 weeks of course material
-- 🎲 **Random Selection**: Every quiz attempt uses different questions
-- 🔀 **Shuffled Options**: Prevents answer pattern memorization
-- 📊 **Detailed Analytics**: Track your performance week-by-week
-- 💯 **Instant Feedback**: See correct answers immediately after submission
-- 🎨 **Beautiful UI**: Clean, modern, and responsive design
+- 📚 **Covers all 13 weeks** of course material  
+- 🎲 **Randomized question sets** for each attempt  
+- 🔀 **Shuffled options** to prevent memorization  
+- 📊 **Performance analytics** for progress tracking  
+- 💯 **Instant feedback** after submission  
+- 🎨 **Modern, responsive UI** for seamless experience  
 
 ---
 
@@ -50,129 +52,58 @@ This is a comprehensive quiz application built for students taking the **NPTEL E
 
 ### 🎮 Core Features
 
-- ✅ **130+ Questions** from NPTEL 2025 course
-- ✅ **Random 50 Questions** per quiz attempt
-- ✅ **Shuffled Answer Options** for better learning
-- ✅ **Question Navigator** to jump between questions
-- ✅ **Progress Tracking** with visual indicators
-- ✅ **Detailed Results** with week/assignment breakdown
-- ✅ **Performance Feedback** based on score ranges
-- ✅ **Responsive Design** - works on all devices
-- ✅ **Print Results** functionality
+- ✅ 130+ questions from NPTEL 2025  
+- ✅ 50 random questions per quiz attempt  
+- ✅ Shuffled options each time  
+- ✅ Jump between questions easily  
+- ✅ Visual progress tracker  
+- ✅ Week-wise score analysis  
+- ✅ Motivational feedback messages  
+- ✅ Works across all devices  
+- ✅ Print or download results  
 
-### 📊 Score Performance Messages
+### 📊 Score Feedback Messages
 
 | Score Range | Message |
-|-------------|---------|
-| 90-100% | 🏆 Outstanding! You've mastered the concepts! |
-| 70-89% | 🎯 Great job! You have strong understanding! |
-| 50-69% | 👍 Good effort! Review the topics you missed. |
-| 0-49% | 📖 Keep studying! Review all the materials. |
-
----
-
-## 📸 Screenshots
-
-### Landing Page
-<div align="center">
-<img src="screenshots/landing.png" alt="Landing Page" width="600"/>
-</div>
-
-### Quiz Interface
-<div align="center">
-<img src="screenshots/quiz.png" alt="Quiz Interface" width="600"/>
-</div>
-
-### Results Page
-<div align="center">
-<img src="screenshots/results.png" alt="Results Page" width="600"/>
-</div>
+|--------------|----------|
+| 90–100% | 🏆 Outstanding! You've mastered the concepts! |
+| 70–89% | 🎯 Great job! You have strong understanding! |
+| 50–69% | 👍 Good effort! Review the topics you missed. |
+| 0–49% | 📖 Keep studying! Review all the materials. |
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 16.0** - React framework with App Router
-- **React 19.2** - UI library
-- **Tailwind CSS 4.0** - Utility-first CSS framework
+- **Next.js 16.0** – App Router architecture  
+- **React 19.2** – UI library  
+- **Tailwind CSS 4.0** – Modern CSS utility framework  
 
 ### Libraries
-- **lucide-react** - Beautiful icons
-- **React Hooks** - State management
+- **lucide-react** – Icon set  
+- **React Hooks** – Efficient state management  
 
-### Development Tools
-- **ESLint** - Code linting
-- **PostCSS** - CSS processing
-
----
-
-## 🚀 Installation
-
-### Prerequisites
-
-- Node.js 18.0 or higher
-- npm, yarn, pnpm, or bun
-
-### Step-by-Step Guide
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/aryank354/mooc-quiz-app.git
-cd mooc-quiz-app
-```
-
-2. **Install dependencies**
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
-
-3. **Run the development server**
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-4. **Open in browser**
-```
-http://localhost:3000
-```
+### Dev Tools
+- **ESLint** – Code linting  
+- **PostCSS** – CSS transformations  
 
 ---
 
 ## 💻 Usage
 
-### Taking a Quiz
+1. Enter your name on the landing page  
+2. Click **Start Quiz**  
+3. Answer **50 random questions**  
+4. Use **Previous / Next** buttons to navigate  
+5. Submit your quiz for instant results  
+6. Review all answers with explanations  
+7. Optionally **print or save** results  
 
-1. **Enter your name** on the landing page
-2. Click **"Start Quiz"** button
-3. **Answer 50 random questions** from the database
-4. Use **Previous/Next** buttons to navigate
-5. Use **Question Navigator** to jump to specific questions
-6. Click **"Submit Quiz"** when all questions are answered
-7. View your **detailed results** with correct answers
-
-### Question Navigator
-
-- **Purple** = Current question
-- **Green** = Answered questions
-- **Gray** = Not answered yet
-
-### Results Page
-
-- View your **score percentage**
-- See **correct vs incorrect** count
-- Review **all questions** with your answers
-- Check **correct answers** for mistakes
-- See **week/assignment** for each question
-- **Print results** for offline review
+### Legend
+- 🟣 Current Question  
+- 🟢 Answered  
+- ⚪ Not answered  
 
 ---
 
@@ -181,112 +112,65 @@ http://localhost:3000
 ```
 mooc-quiz-app/
 ├── app/
-│   ├── globals.css          # Global styles
-│   ├── layout.js            # Root layout
-│   └── page.js              # Main page (stage management)
+│   ├── globals.css
+│   ├── layout.js
+│   └── page.js
 ├── components/
-│   ├── LandingPage.js       # Entry page with name input
-│   ├── QuizInterface.js     # Quiz taking interface
-│   └── ResultPage.js        # Results display
+│   ├── LandingPage.js
+│   ├── QuizInterface.js
+│   └── ResultPage.js
 ├── data/
-│   └── questions.js         # 130+ questions database
+│   └── questions.js
 ├── utils/
-│   └── quizLogic.js         # Utility functions
-├── public/                  # Static assets
+│   └── quizLogic.js
+├── public/
 ├── package.json
-├── tailwind.config.js
-├── next.config.mjs
-└── README.md
+└── tailwind.config.js
 ```
 
 ---
 
 ## 📚 Question Database
 
-### Structure
-
-Each question follows this format:
+Each question follows this structure:
 
 ```javascript
 {
-  id: 1,                    // Unique identifier
-  week: 0,                  // Week number (0-12)
-  assignment: 0,            // Assignment number
-  question: "...",          // Question text
-  options: [...],           // Array of 4 options
-  correctAnswer: 0          // Index of correct answer (0-3)
+  id: 1,
+  week: 0,
+  assignment: 0,
+  question: "Example question?",
+  options: ["A", "B", "C", "D"],
+  correctAnswer: 2
 }
 ```
-
-### Coverage
 
 | Week | Questions | Topics |
-|------|-----------|--------|
-| Week 0 | 10 | Introduction & Basics |
-| Week 1 | 10 | Ecology Fundamentals |
-| Week 2 | 10 | Ecological Structure |
-| Week 3 | 10 | Ecological Interactions |
-| Week 4 | 10 | Food Chains & Energy |
-| Week 5 | 10 | Population Ecology |
-| Week 6 | 10 | Community Ecology |
-| Week 7 | 10 | Distribution & Abundance |
-| Week 8 | 10 | Conservation |
-| Week 9 | 10 | Human Ecology |
-| Week 10 | 10 | Ecology of Change |
-| Week 11 | 10 | Applied Ecology |
-| Week 12 | 10 | Revision |
-| **Total** | **130** | **All Course Topics** |
+|------|------------|--------|
+| Week 0–12 | 130 | Full NPTEL coverage |
 
-### Adding New Questions
-
-To add more questions, edit `data/questions.js`:
-
-```javascript
-{
-  id: 131,
-  week: 5,
-  assignment: 5,
-  question: "Your question here?",
-  options: [
-    "Option A",
-    "Option B",
-    "Option C",
-    "Option D"
-  ],
-  correctAnswer: 2  // Index 0-3
-}
-```
+To add new questions, simply append to `data/questions.js`.
 
 ---
 
 ## 🔧 Customization
 
 ### Change Quiz Length
-
-Edit `app/page.js`:
-
 ```javascript
 const selectedQuestions = selectRandomQuestions(questionsDatabase, 50);
-// Change 50 to any number
 ```
 
 ### Modify Passing Score
-
-Edit `utils/quizLogic.js`:
-
 ```javascript
-passed: percentage >= 50,  // Change 50 to your threshold
+passed: percentage >= 50
 ```
 
-### Update Developer Info
-
-Edit `components/LandingPage.js`:
-
+### Developer Info
 ```javascript
 const developerInfo = {
-  name: "Your Name",
-  linkedin: "https://linkedin.com/in/yourprofile",
-  github: "https://github.com/yourusername"
+  name: "Aryan Kanojia",
+  linkedin: "https://linkedin.com/in/aryank354",
+  github: "https://github.com/aryank354"
 };
 ```
 
@@ -294,57 +178,33 @@ const developerInfo = {
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how you can help:
+🎉 **Contributions are highly welcome!**  
+If you’re passionate about open-source or want to help students prepare better, join in!
 
-1. **Fork** the repository
-2. **Create** a new branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
+1. Fork the repo  
+2. Create a new branch (`feature/AmazingFeature`)  
+3. Commit your changes  
+4. Push and open a Pull Request  
 
-### Areas for Contribution
-
-- 📝 Add more questions to the database
-- 🎨 Improve UI/UX design
-- 🐛 Fix bugs and issues
-- 📚 Improve documentation
-- 🌐 Add internationalization
-- 📊 Add more analytics features
-
----
-
-## 🎓 Educational Use
-
-This app is designed for educational purposes to help students prepare for the NPTEL Ecology & Evolution course. 
-
-### Recommended Study Approach
-
-1. **First Attempt**: Take quiz without preparation to assess baseline
-2. **Study**: Review course materials for topics you missed
-3. **Practice**: Take multiple quiz attempts with different question sets
-4. **Track Progress**: Monitor improvement over time
-5. **Focus**: Pay attention to week/assignment areas needing improvement
+### You Can Contribute By:
+- 🧠 Adding new quiz questions  
+- 🎨 Improving UI/UX  
+- 🐞 Fixing bugs  
+- 📚 Enhancing documentation  
+- 🌐 Adding localization  
+- 📈 Extending analytics  
 
 ---
 
 ## 📝 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+Licensed under the **MIT License**.
 
 ```
 MIT License
 
 Copyright (c) 2025 Aryan Kanojia
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Permission is hereby granted, free of charge, to any person obtaining a copy...
 ```
 
 ---
@@ -353,12 +213,13 @@ copies or substantial portions of the Software.
 
 <div align="center">
 
-### Aryan Kanojia
+### **Aryan Kanojia**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/aryank354)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/aryank354)
 
-**Developed with 💜 for NPTEL Students**
+💜 **Developed with love for NPTEL Students**  
+🔗 [**Try it live here**](https://mooc-quiz-app.vercel.app/)
 
 </div>
 
@@ -366,38 +227,27 @@ copies or substantial portions of the Software.
 
 ## 🙏 Acknowledgments
 
-- **NPTEL** for the comprehensive Ecology & Evolution course
-- **Next.js** team for the amazing framework
-- **Tailwind CSS** for the utility-first CSS framework
-- **Lucide** for the beautiful icons
-- All **contributors** who help improve this project
+- **NPTEL** for the Ecology & Evolution course  
+- **Next.js**, **Tailwind**, and **Lucide** for powering this app  
+- All contributors and students who make learning fun 🎓  
 
 ---
 
 ## 📞 Support
 
-If you found this helpful, please consider:
+If this project helped you:
 
-- ⭐ **Starring** this repository
-- 🐛 **Reporting bugs** via issues
-- 💡 **Suggesting features** via issues
-- 🤝 **Contributing** to the codebase
-- 📢 **Sharing** with fellow students
-
----
-
-## 📊 Project Stats
-
-![GitHub stars](https://img.shields.io/github/stars/aryank354/mooc-quiz-app?style=social)
-![GitHub forks](https://img.shields.io/github/forks/aryank354/mooc-quiz-app?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/aryank354/mooc-quiz-app?style=social)
+- ⭐ Star the repo  
+- 🐛 Report bugs  
+- 💡 Suggest features  
+- 🤝 Contribute  
+- 📢 Share it with your batchmates  
 
 ---
 
 <div align="center">
 
-**Made with ❤️ for Students • By Students**
-
+**Made with ❤️ for Students • By Students**  
 ⭐ Star this repo if it helped you! ⭐
 
 </div>
