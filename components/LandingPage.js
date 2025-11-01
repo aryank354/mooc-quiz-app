@@ -91,7 +91,7 @@ export default function LandingPage({ onStart }) {
         <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
           <h3 className="font-semibold text-gray-800 mb-3">Quiz Instructions:</h3>
           <ul className="space-y-2 text-sm text-gray-600">
-            <li>✓ 50 randomly selected questions from the Week 1 to Week 12 assignments (Latest 2025)</li>
+            <li>✓ 50 randomly selected questions from the Week 0 to Week 12 assignments (Latest 2025)</li>
             <li>✓ Answer options are shuffled for each question</li>
             <li>✓ Click on an option to select your answer</li>
             <li>✓ Navigate using the Previous/Next buttons</li>
