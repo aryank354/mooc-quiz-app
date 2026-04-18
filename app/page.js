@@ -7,7 +7,6 @@ import ResultPage from '@/components/ResultPage';
 import { ecologyQuestions, oopsQuestions } from '@/data/questions';
 import { selectRandomQuestions, shuffleOptions } from '@/utils/quizLogic';
 
-
 export default function Home() {
   const [stage, setStage] = useState('landing');
   const [studentName, setStudentName] = useState('');
@@ -15,20 +14,26 @@ export default function Home() {
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
 
-  // Updated handleStart to accept the 'mode' parameter
-  const handleStart = (name, subject, mode) => {
+  /**
+   * onStart(name, subject, mode, questionCount)
+   *  mode          → 'standard' | 'custom' | 'full'
+   *  questionCount → number for 'standard'/'custom', null for 'full' (means all)
+   */
+  const handleStart = (name, subject, mode, questionCount) => {
     setStudentName(name);
     setActiveSubject(subject);
-    
-    // Select the correct database
+
     const activeDatabase = subject === 'ecology' ? ecologyQuestions : oopsQuestions;
-    
-    // MAGIC HAPPENS HERE: If mode is 'full', grab ALL questions. If 'standard', grab max 50.
-    const questionCount = mode === 'full' ? activeDatabase.length : Math.min(50, activeDatabase.length);
-    
-    const selectedQuestions = selectRandomQuestions(activeDatabase, questionCount);
+
+    // Determine how many questions to pull
+    const count =
+      mode === 'full'
+        ? activeDatabase.length                          // all
+        : Math.min(questionCount ?? 50, activeDatabase.length); // custom or standard
+
+    const selectedQuestions = selectRandomQuestions(activeDatabase, count);
     const questionsWithShuffledOptions = selectedQuestions.map(shuffleOptions);
-    
+
     setQuizQuestions(questionsWithShuffledOptions);
     setStage('quiz');
   };

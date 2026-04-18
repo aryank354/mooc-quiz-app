@@ -1,101 +1,128 @@
 "use client";
 
-import { Trophy, RotateCcw, CheckCircle, XCircle } from 'lucide-react';
-import { calculateResults } from '@/utils/quizLogic';
+import { Trophy, RotateCcw, CheckCircle, XCircle } from "lucide-react";
+import { calculateResults } from "@/utils/quizLogic";
+import ThemeToggle from "./ThemeToggle";
 
 export default function ResultPage({ studentName, questions, answers, onRestart }) {
   const results = calculateResults(questions, answers);
 
   const getPerformanceMessage = (percentage) => {
-    if (percentage >= 90) return { msg: "Outstanding! You've mastered the concepts!", color: "text-green-600" };
-    if (percentage >= 70) return { msg: "Great job! You have strong understanding!", color: "text-blue-600" };
-    if (percentage >= 50) return { msg: "Good effort! Review the topics you missed.", color: "text-yellow-600" };
-    return { msg: "Keep studying! Review all the materials.", color: "text-orange-600" };
+    if (percentage >= 90)
+      return { msg: "Outstanding! You've mastered the concepts!", color: "text-green-600 dark:text-green-400" };
+    if (percentage >= 70)
+      return { msg: "Great job! You have strong understanding!", color: "text-blue-600 dark:text-blue-400" };
+    if (percentage >= 50)
+      return { msg: "Good effort! Review the topics you missed.", color: "text-yellow-600 dark:text-yellow-400" };
+    return { msg: "Keep studying! Review all the materials.", color: "text-orange-600 dark:text-orange-400" };
   };
 
   const performance = getPerformanceMessage(parseFloat(results.percentage));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-4 md:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-950 dark:to-gray-900 p-4 md:p-8 transition-colors duration-300">
+      {/* Theme Toggle */}
+      <ThemeToggle />
+
       <div className="max-w-4xl mx-auto">
         {/* Result Header */}
-        <div className="rounded-2xl shadow-2xl p-8 mb-6 bg-white border-4 border-gray-200">
+        <div className="rounded-2xl shadow-2xl dark:shadow-gray-800 p-8 mb-6 bg-white dark:bg-gray-900 border-4 border-gray-200 dark:border-gray-700">
           <div className="text-center">
-            <div className={`inline-block p-4 rounded-full mb-4 ${
-              results.passed 
-                ? 'bg-green-100' 
-                : 'bg-orange-100'
-            }`}>
+            <div
+              className={`inline-block p-4 rounded-full mb-4 ${
+                results.passed ? "bg-green-100 dark:bg-green-900/40" : "bg-orange-100 dark:bg-orange-900/40"
+              }`}
+            >
               {results.passed ? (
-                <Trophy className="w-16 h-16 text-green-600" />
+                <Trophy className="w-16 h-16 text-green-600 dark:text-green-400" />
               ) : (
-                <RotateCcw className="w-16 h-16 text-orange-600" />
+                <RotateCcw className="w-16 h-16 text-orange-600 dark:text-orange-400" />
               )}
             </div>
-            <h1 className="text-4xl font-bold mb-2 text-black">
-              {results.passed ? 'Congratulations!' : 'Keep Learning!'}
+            <h1 className="text-4xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+              {results.passed ? "Congratulations!" : "Keep Learning!"}
             </h1>
-            <p className="text-xl mb-2 font-semibold text-black">{studentName}</p>
-            <p className={`text-lg font-bold mb-6 ${performance.color} bg-gray-100 px-4 py-2 rounded-lg inline-block`}>
+            <p className="text-xl mb-2 font-semibold text-gray-800 dark:text-gray-200">
+              {studentName}
+            </p>
+            <p
+              className={`text-lg font-bold mb-6 ${performance.color} bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg inline-block`}
+            >
               {performance.msg}
             </p>
-            
+
             <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-              <div className="bg-purple-100 rounded-xl p-4 border-2 border-purple-200">
-                <div className="text-3xl font-bold text-black">{results.percentage}%</div>
-                <div className="text-sm font-semibold text-black">Score</div>
+              <div className="bg-purple-100 dark:bg-purple-900/40 rounded-xl p-4 border-2 border-purple-200 dark:border-purple-700">
+                <div className="text-3xl font-bold text-gray-900 dark:text-purple-200">
+                  {results.percentage}%
+                </div>
+                <div className="text-sm font-semibold text-gray-700 dark:text-purple-300">Score</div>
               </div>
-              <div className="bg-green-100 rounded-xl p-4 border-2 border-green-200">
-                <div className="text-3xl font-bold text-black">{results.correct}</div>
-                <div className="text-sm font-semibold text-black">Correct</div>
+              <div className="bg-green-100 dark:bg-green-900/40 rounded-xl p-4 border-2 border-green-200 dark:border-green-700">
+                <div className="text-3xl font-bold text-gray-900 dark:text-green-200">
+                  {results.correct}
+                </div>
+                <div className="text-sm font-semibold text-gray-700 dark:text-green-300">Correct</div>
               </div>
-              <div className="bg-red-100 rounded-xl p-4 border-2 border-red-200">
-                <div className="text-3xl font-bold text-black">{results.incorrect}</div>
-                <div className="text-sm font-semibold text-black">Incorrect</div>
+              <div className="bg-red-100 dark:bg-red-900/40 rounded-xl p-4 border-2 border-red-200 dark:border-red-700">
+                <div className="text-3xl font-bold text-gray-900 dark:text-red-200">
+                  {results.incorrect}
+                </div>
+                <div className="text-sm font-semibold text-gray-700 dark:text-red-300">Incorrect</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Detailed Results */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-          <h2 className="text-2xl font-bold text-black mb-4">Detailed Results</h2>
-          <div className="space-y-4 max-h-96 overflow-y-auto">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg dark:shadow-gray-800 p-6 mb-6 border border-gray-100 dark:border-gray-700">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            Detailed Results
+          </h2>
+          <div className="space-y-4 max-h-96 overflow-y-auto custom-scrollbar">
             {results.details.map((detail, index) => (
-              <div 
+              <div
                 key={detail.questionId}
                 className={`p-4 rounded-xl border-2 ${
-                  detail.isCorrect 
-                    ? 'border-green-200 bg-green-50' 
-                    : 'border-red-200 bg-red-50'
+                  detail.isCorrect
+                    ? "border-green-200 dark:border-green-700 bg-green-50 dark:bg-green-900/20"
+                    : "border-red-200 dark:border-red-700 bg-red-50 dark:bg-red-900/20"
                 }`}
               >
                 <div className="flex items-start gap-3">
                   {detail.isCorrect ? (
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
                   ) : (
-                    <XCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
+                    <XCircle className="w-6 h-6 text-red-600 dark:text-red-400 flex-shrink-0 mt-1" />
                   )}
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-semibold bg-purple-100 text-purple-700 px-2 py-1 rounded">
+                      <span className="text-xs font-semibold bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-2 py-1 rounded">
                         Week {detail.week} • Assignment {detail.assignment}
                       </span>
                     </div>
-                    <p className="font-semibold text-black mb-2">
+                    <p className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                       Q{index + 1}: {detail.question}
                     </p>
                     <div className="text-sm space-y-1">
-                      <p className="text-black">
+                      <p className="text-gray-800 dark:text-gray-200">
                         <span className="font-semibold">Your answer: </span>
-                        <span className={`font-medium ${detail.isCorrect ? 'text-green-700' : 'text-red-700'}`}>
+                        <span
+                          className={`font-medium ${
+                            detail.isCorrect
+                              ? "text-green-700 dark:text-green-400"
+                              : "text-red-700 dark:text-red-400"
+                          }`}
+                        >
                           {detail.userAnswer}
                         </span>
                       </p>
                       {!detail.isCorrect && (
-                        <p className="text-black">
+                        <p className="text-gray-800 dark:text-gray-200">
                           <span className="font-semibold">Correct answer: </span>
-                          <span className="font-medium text-green-700">{detail.correctAnswer}</span>
+                          <span className="font-medium text-green-700 dark:text-green-400">
+                            {detail.correctAnswer}
+                          </span>
                         </p>
                       )}
                     </div>
@@ -115,10 +142,10 @@ export default function ResultPage({ studentName, questions, answers, onRestart 
             <RotateCcw className="w-6 h-6" />
             Take Another Quiz
           </button>
-          
+
           <button
             onClick={() => window.print()}
-            className="w-full bg-white border-2 border-gray-800 text-gray-800 py-4 px-8 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all"
+            className="w-full bg-white dark:bg-gray-800 border-2 border-gray-800 dark:border-gray-500 text-gray-800 dark:text-gray-200 py-4 px-8 rounded-xl font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
           >
             Print Results
           </button>
