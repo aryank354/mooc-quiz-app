@@ -140,7 +140,6 @@ export const formatQuestionText = (text) => {
 // QUIZ INTERFACE COMPONENT
 // ==========================================
 export default function QuizInterface({
-  studentName,
   subjectTheme,
   questions,
   onComplete,
@@ -234,7 +233,7 @@ export default function QuizInterface({
           <div className="flex justify-between items-center mb-3">
             <div className="flex-1">
               <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 truncate">
-                {studentName}
+                {subjectTheme === "ecology" ? "Wildlife Ecology" : "OOPs Practice"}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Q {currentIndex + 1}/{questions.length}
@@ -319,7 +318,7 @@ export default function QuizInterface({
               <div className="flex justify-between items-center mb-4">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-                    Welcome, {studentName}!
+                    Quiz Practice
                   </h2>
                   <p className="text-gray-500 dark:text-gray-400 font-medium">
                     Question {currentIndex + 1} of {questions.length}

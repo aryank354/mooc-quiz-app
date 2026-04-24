@@ -4,7 +4,7 @@ import { Trophy, RotateCcw, CheckCircle, XCircle } from "lucide-react";
 import { calculateResults } from "@/utils/quizLogic";
 import ThemeToggle from "./ThemeToggle";
 
-export default function ResultPage({ studentName, questions, answers, onRestart }) {
+export default function ResultPage({ questions, answers, onRestart }) {
   const results = calculateResults(questions, answers);
 
   const getPerformanceMessage = (percentage) => {
@@ -39,12 +39,9 @@ export default function ResultPage({ studentName, questions, answers, onRestart 
                 <RotateCcw className="w-16 h-16 text-orange-600 dark:text-orange-400" />
               )}
             </div>
-            <h1 className="text-4xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+            <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
               {results.passed ? "Congratulations!" : "Keep Learning!"}
             </h1>
-            <p className="text-xl mb-2 font-semibold text-gray-800 dark:text-gray-200">
-              {studentName}
-            </p>
             <p
               className={`text-lg font-bold mb-6 ${performance.color} bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-lg inline-block`}
             >

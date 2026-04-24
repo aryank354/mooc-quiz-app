@@ -1,18 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { BookOpen, Trophy, Clock, ArrowRight, Code, Minus, Plus, Hash } from "lucide-react";
-import { validateName } from "@/utils/quizLogic";
+import { BookOpen, Trophy, Clock, ArrowRight, Code, Minus, Plus, Hash, Calendar } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const QUICK_PICKS = [5, 10, 20, 30, 50, 75];
 
 export default function LandingPage({ onStart }) {
-  const [name, setName] = useState("");
-  const [error, setError] = useState("");
   const [subject, setSubject] = useState("ecology");
   const [mode, setMode] = useState("standard");
   const [customCount, setCustomCount] = useState(20);
+  const [selectedWeek, setSelectedWeek] = useState(0);
   const [countError, setCountError] = useState("");
 
   const isEcology = subject === "ecology";
@@ -41,21 +39,17 @@ export default function LandingPage({ onStart }) {
 
   const resolvedCount = () => {
     if (mode === "standard") return 50;
-    if (mode === "full") return null;
+    if (mode === "full" || mode === "week-wise") return null;
     return Number(customCount) || 20;
   };
 
   const handleStart = () => {
-    const validation = validateName(name);
-    if (!validation.isValid) { setError(validation.error); return; }
     if (mode === "custom") {
       const n = Number(customCount);
       if (!n || n < 1) { setCountError("Please enter a valid number of questions."); return; }
     }
-    onStart(name.trim(), subject, mode, resolvedCount());
+    onStart(subject, mode, resolvedCount(), selectedWeek);
   };
-
-  const handleKeyPress = (e) => { if (e.key === "Enter") handleStart(); };
 
   const modeOn  = "bg-gray-800 dark:bg-gray-100 text-white dark:text-gray-900 shadow-md";
   const modeOff = "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400";
@@ -63,6 +57,7 @@ export default function LandingPage({ onStart }) {
   const questionLabel =
     mode === "full"     ? "Every Single Question" :
     mode === "standard" ? "50 Questions" :
+    mode === "week-wise"? `Week ${selectedWeek} Questions` :
     `${customCount || "?"} Questions`;
 
   return (
@@ -97,7 +92,7 @@ export default function LandingPage({ onStart }) {
         </div>
 
         {/* ── Mode Selection ── */}
-        <div className="grid grid-cols-3 gap-2 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
           <button
             onClick={() => setMode("standard")}
             className={`flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl font-bold text-xs transition-all ${mode === "standard" ? modeOn : modeOff}`}
@@ -115,6 +110,14 @@ export default function LandingPage({ onStart }) {
             <span className="font-normal opacity-75">Your pick</span>
           </button>
           <button
+            onClick={() => setMode("week-wise")}
+            className={`flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl font-bold text-xs transition-all ${mode === "week-wise" ? modeOn : modeOff}`}
+          >
+            <Calendar className="w-4 h-4" />
+            <span>Week-wise</span>
+            <span className="font-normal opacity-75">Topic Focus</span>
+          </button>
+          <button
             onClick={() => setMode("full")}
             className={`flex flex-col items-center justify-center gap-1 py-2.5 px-2 rounded-xl font-bold text-xs transition-all ${mode === "full" ? modeOn : modeOff}`}
           >
@@ -125,13 +128,12 @@ export default function LandingPage({ onStart }) {
         </div>
 
         {/* ── Custom Question Picker ── */}
-        <div className={`overflow-hidden transition-all duration-300 ${mode === "custom" ? "max-h-72 opacity-100 mb-4" : "max-h-0 opacity-0"}`}>
+        <div className={`overflow-hidden transition-all duration-300 ${mode === "custom" ? "max-h-72 opacity-100 mb-4" : "max-h-0 opacity-0 hidden"}`}>
           <div className="p-4 rounded-2xl border-2 border-dashed border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
             <p className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-3 text-center uppercase tracking-widest">
               How many questions?
             </p>
 
-            {/* Quick-pick chips — 3 per row on mobile */}
             <div className="grid grid-cols-3 gap-2 mb-4">
               {QUICK_PICKS.map((n) => (
                 <button
@@ -148,7 +150,6 @@ export default function LandingPage({ onStart }) {
               ))}
             </div>
 
-            {/* Stepper row */}
             <div className="flex items-center justify-center gap-2">
               <button
                 onClick={() => stepCount(-5)}
@@ -185,7 +186,30 @@ export default function LandingPage({ onStart }) {
             {countError && (
               <p className="text-red-500 dark:text-red-400 text-xs text-center mt-2 font-semibold">{countError}</p>
             )}
-            <p className="text-xs text-center text-gray-400 dark:text-gray-500 mt-1.5">Range: 1 – 500</p>
+          </div>
+        </div>
+
+        {/* ── Week Picker ── */}
+        <div className={`overflow-hidden transition-all duration-300 ${mode === "week-wise" ? "max-h-72 opacity-100 mb-4" : "max-h-0 opacity-0 hidden"}`}>
+          <div className="p-4 rounded-2xl border-2 border-dashed border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+            <p className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-3 text-center uppercase tracking-widest">
+              Select a Week to Practice
+            </p>
+            <div className="grid grid-cols-4 sm:grid-cols-5 gap-2">
+              {[...Array(13).keys()].map((w) => (
+                <button
+                  key={w}
+                  onClick={() => setSelectedWeek(w)}
+                  className={`py-2 rounded-xl text-sm font-bold border-2 transition-all active:scale-95 ${
+                    selectedWeek === w
+                      ? accentChip
+                      : "border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+                  }`}
+                >
+                  Wk {w}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -210,36 +234,20 @@ export default function LandingPage({ onStart }) {
           </div>
         </div>
 
-        {/* ── Name + Start ── */}
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-              Enter Your Name
-            </label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => { setName(e.target.value); setError(""); }}
-              onKeyPress={handleKeyPress}
-              placeholder="Your full name"
-              className={`w-full px-4 py-3.5 text-base text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl outline-none transition-all placeholder:text-gray-400 dark:placeholder:text-gray-500 ${accentRing}`}
-              autoFocus
-            />
-            {error && <p className="text-red-500 text-sm mt-1.5">{error}</p>}
-          </div>
-
-          <button
-            onClick={handleStart}
-            className={`w-full text-white py-4 rounded-xl font-bold text-base sm:text-lg transition-all shadow-lg flex items-center justify-center gap-2 active:scale-95 ${accentBtn}`}
-          >
-            {mode === "custom"
-              ? `Start ${customCount || "?"}-Question Quiz`
-              : mode === "full"
-              ? "Start Marathon"
-              : "Start Quiz"}
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
+        {/* ── Start Button ── */}
+        <button
+          onClick={handleStart}
+          className={`w-full text-white py-4 mt-2 rounded-xl font-bold text-base sm:text-lg transition-all shadow-lg flex items-center justify-center gap-2 active:scale-95 ${accentBtn}`}
+        >
+          {mode === "custom"
+            ? `Start ${customCount || "?"}-Question Quiz`
+            : mode === "full"
+            ? "Start Marathon"
+            : mode === "week-wise"
+            ? `Start Week ${selectedWeek} Practice`
+            : "Start Quiz"}
+          <ArrowRight className="w-5 h-5" />
+        </button>
       </div>
 
       {/* ── Credit ── */}

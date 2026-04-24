@@ -9,26 +9,30 @@ import { selectRandomQuestions, shuffleOptions } from '@/utils/quizLogic';
 
 export default function Home() {
   const [stage, setStage] = useState('landing');
-  const [studentName, setStudentName] = useState('');
   const [activeSubject, setActiveSubject] = useState('ecology');
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
 
   /**
-   * onStart(name, subject, mode, questionCount)
-   *  mode          → 'standard' | 'custom' | 'full'
-   *  questionCount → number for 'standard'/'custom', null for 'full' (means all)
+   * onStart(subject, mode, questionCount, selectedWeek)
+   * mode          → 'standard' | 'custom' | 'full' | 'week-wise'
+   * questionCount → number for 'standard'/'custom', null for 'full'/'week-wise'
+   * selectedWeek  → number representing the specific week to practice
    */
-  const handleStart = (name, subject, mode, questionCount) => {
-    setStudentName(name);
+  const handleStart = (subject, mode, questionCount, selectedWeek) => {
     setActiveSubject(subject);
 
-    const activeDatabase = subject === 'ecology' ? ecologyQuestions : oopsQuestions;
+    let activeDatabase = subject === 'ecology' ? ecologyQuestions : oopsQuestions;
+
+    // Filter by week if week-wise mode is selected
+    if (mode === 'week-wise' && selectedWeek !== null) {
+      activeDatabase = activeDatabase.filter(q => q.week === selectedWeek);
+    }
 
     // Determine how many questions to pull
     const count =
-      mode === 'full'
-        ? activeDatabase.length                          // all
+      (mode === 'full' || mode === 'week-wise')
+        ? activeDatabase.length                          // all (or all in a week)
         : Math.min(questionCount ?? 50, activeDatabase.length); // custom or standard
 
     const selectedQuestions = selectRandomQuestions(activeDatabase, count);
@@ -45,7 +49,6 @@ export default function Home() {
 
   const handleRestart = () => {
     setStage('landing');
-    setStudentName('');
     setQuizQuestions([]);
     setAnswers({});
   };
@@ -55,7 +58,6 @@ export default function Home() {
       {stage === 'landing' && <LandingPage onStart={handleStart} />}
       {stage === 'quiz' && (
         <QuizInterface
-          studentName={studentName}
           subjectTheme={activeSubject}
           questions={quizQuestions}
           onComplete={handleQuizComplete}
@@ -63,7 +65,6 @@ export default function Home() {
       )}
       {stage === 'result' && (
         <ResultPage
-          studentName={studentName}
           subjectTheme={activeSubject}
           questions={quizQuestions}
           answers={answers}
