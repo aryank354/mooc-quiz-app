@@ -5,35 +5,41 @@ import LandingPage from '@/components/LandingPage';
 import QuizInterface from '@/components/QuizInterface';
 import ResultPage from '@/components/ResultPage';
 import { ecologyQuestions, oopsQuestions } from '@/data/questions';
-import { selectRandomQuestions, shuffleOptions } from '@/utils/quizLogic';
+import { selectRandomQuestions, shuffleOptions, getMistakes } from '@/utils/quizLogic';
 
 export default function Home() {
   const [stage, setStage] = useState('landing');
-  const [activeSubject, setActiveSubject] = useState('ecology');
+  const [activeSubject, setActiveSubject] = useState('oops');
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
+  const [flaggedQuestions, setFlaggedQuestions] = useState(new Set());
+  const [isTimedMode, setIsTimedMode] = useState(false);
 
-  /**
-   * onStart(subject, mode, questionCount, selectedWeek)
-   * mode          → 'standard' | 'custom' | 'full' | 'week-wise'
-   * questionCount → number for 'standard'/'custom', null for 'full'/'week-wise'
-   * selectedWeek  → number representing the specific week to practice
-   */
-  const handleStart = (subject, mode, questionCount, selectedWeek) => {
+  const handleStart = (subject, mode, questionCount, selectedWeek, isTimed) => {
     setActiveSubject(subject);
+    setIsTimedMode(isTimed);
+    setFlaggedQuestions(new Set());
 
     let activeDatabase = subject === 'ecology' ? ecologyQuestions : oopsQuestions;
 
-    // Filter by week if week-wise mode is selected
+    // Handle Smart Study (Weaknesses)
+    if (mode === 'smart-study') {
+      const mistakeIds = getMistakes(subject);
+      if (mistakeIds.length === 0) {
+        alert("You have no recorded mistakes for this subject yet! Play standard mode first.");
+        return;
+      }
+      activeDatabase = activeDatabase.filter(q => mistakeIds.includes(q.id));
+    }
+
+    // Filter by week
     if (mode === 'week-wise' && selectedWeek !== null) {
       activeDatabase = activeDatabase.filter(q => q.week === selectedWeek);
     }
 
-    // Determine how many questions to pull
-    const count =
-      (mode === 'full' || mode === 'week-wise')
-        ? activeDatabase.length                          // all (or all in a week)
-        : Math.min(questionCount ?? 50, activeDatabase.length); // custom or standard
+    const count = (mode === 'full' || mode === 'week-wise' || mode === 'smart-study')
+        ? activeDatabase.length 
+        : Math.min(questionCount ?? 50, activeDatabase.length);
 
     const selectedQuestions = selectRandomQuestions(activeDatabase, count);
     const questionsWithShuffledOptions = selectedQuestions.map(shuffleOptions);
@@ -42,8 +48,9 @@ export default function Home() {
     setStage('quiz');
   };
 
-  const handleQuizComplete = (userAnswers) => {
+  const handleQuizComplete = (userAnswers, flags) => {
     setAnswers(userAnswers);
+    setFlaggedQuestions(flags);
     setStage('result');
   };
 
@@ -51,6 +58,7 @@ export default function Home() {
     setStage('landing');
     setQuizQuestions([]);
     setAnswers({});
+    setFlaggedQuestions(new Set());
   };
 
   return (
@@ -60,6 +68,7 @@ export default function Home() {
         <QuizInterface
           subjectTheme={activeSubject}
           questions={quizQuestions}
+          isTimed={isTimedMode}
           onComplete={handleQuizComplete}
         />
       )}
@@ -68,6 +77,7 @@ export default function Home() {
           subjectTheme={activeSubject}
           questions={quizQuestions}
           answers={answers}
+          flagged={flaggedQuestions}
           onRestart={handleRestart}
         />
       )}
