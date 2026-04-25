@@ -8,7 +8,7 @@ import { getHistory } from "@/utils/quizLogic";
 const QUICK_PICKS = [5, 10, 20, 30, 50, 75];
 
 export default function LandingPage({ onStart }) {
-  const [subject, setSubject] = useState("ecology");
+  const [subject, setSubject] = useState("oops");
   const [mode, setMode] = useState("standard");
   const [customCount, setCustomCount] = useState(20);
   const [selectedWeek, setSelectedWeek] = useState(0);
