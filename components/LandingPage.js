@@ -10,7 +10,7 @@ const QUICK_PICKS = [5, 10, 20, 30, 50, 75];
 export default function LandingPage({ onStart }) {
   const [subject, setSubject] = useState("oops");
   const [mode, setMode] = useState("standard");
-  const [customCount, setCustomCount] = useState(20);
+  const [customCount, setCustomCount] = useState(50);
   const [selectedWeek, setSelectedWeek] = useState(0);
   const [countError, setCountError] = useState("");
   const [isTimed, setIsTimed] = useState(false);
@@ -28,7 +28,7 @@ export default function LandingPage({ onStart }) {
   const resolvedCount = () => {
     if (mode === "standard") return 50;
     if (mode === "full" || mode === "week-wise" || mode === "smart-study") return null;
-    return Number(customCount) || 20;
+    return Number(customCount) || 50;
   };
 
   const handleStart = () => {
@@ -108,6 +108,45 @@ export default function LandingPage({ onStart }) {
             <span className="text-lg">🔥</span><span>Marathon</span>
           </button>
         </div>
+
+        {/* Custom Count Picker (Shows only in custom mode) */}
+        {mode === "custom" && (
+          <div className="mb-6 flex flex-col items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+            <label className="text-sm font-bold text-gray-700 dark:text-gray-300 mb-3">Select Number of Questions:</label>
+            <div className="flex flex-wrap justify-center gap-2 mb-3">
+              {QUICK_PICKS.map(num => (
+                <button
+                  key={num}
+                  onClick={() => {
+                    setCustomCount(num);
+                    setCountError("");
+                  }}
+                  className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${
+                    customCount === num
+                      ? accentChip
+                      : "bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  }`}
+                >
+                  {num}
+                </button>
+              ))}
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium text-gray-500">Or type custom:</span>
+              <input
+                type="number"
+                min="1"
+                value={customCount}
+                onChange={(e) => {
+                  setCustomCount(e.target.value === '' ? '' : Number(e.target.value));
+                  setCountError("");
+                }}
+                className="w-20 px-3 py-2 text-center rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            {countError && <p className="text-red-500 text-xs mt-2 font-bold">{countError}</p>}
+          </div>
+        )}
 
         {/* Timer Toggle */}
         <div className="mb-6 flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 cursor-pointer" onClick={() => setIsTimed(!isTimed)}>

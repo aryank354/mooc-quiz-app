@@ -5,7 +5,6 @@ import { CheckCircle, Trophy, ArrowRight, ChevronLeft, Menu, X, XCircle, Flag, T
 import ThemeToggle from "./ThemeToggle";
 
 export const formatQuestionText = (text) => {
-  // [KEEP YOUR EXACT SMART TEXT RENDERER HERE - I am shortening it for brevity, but YOU paste your full formatQuestionText function here!]
   const lines = text.split("\n");
   const elements = [];
   let currentText = [];
@@ -47,7 +46,7 @@ export const formatQuestionText = (text) => {
   return <div className="text-lg md:text-xl leading-relaxed">{elements}</div>;
 };
 
-export default function QuizInterface({ subjectTheme, questions, isTimed, onComplete }) {
+export default function QuizInterface({ subjectTheme, questions, isTimed, onComplete, onExit }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [selectedOption, setSelectedOption] = useState(null);
@@ -109,7 +108,7 @@ export default function QuizInterface({ subjectTheme, questions, isTimed, onComp
             <p className="text-gray-500 dark:text-gray-400">Question {currentIndex + 1} of {questions.length}</p>
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6">
             {isTimed && (
               <div className={`flex items-center gap-2 text-xl font-black ${timeLeft < 60 ? 'text-red-500 animate-pulse' : 'text-gray-800 dark:text-white'}`}>
                 <Timer className="w-6 h-6" /> {formatTime(timeLeft)}
@@ -118,6 +117,19 @@ export default function QuizInterface({ subjectTheme, questions, isTimed, onComp
             <div className="text-right hidden sm:block">
               <div className={`text-3xl font-black ${themeAccent.text}`}>{answeredCount}/{questions.length}</div>
             </div>
+            
+            {/* Exit Button */}
+            <button 
+              onClick={() => {
+                if (window.confirm("Are you sure you want to exit the quiz? Your progress will be lost.")) {
+                  onExit();
+                }
+              }} 
+              className="flex items-center gap-2 px-3 py-2 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/40 text-red-600 dark:text-red-400 rounded-xl font-bold transition-all border border-red-100 dark:border-red-900/50"
+            >
+              <XCircle className="w-5 h-5" />
+              <span className="hidden sm:inline">Exit</span>
+            </button>
           </div>
         </div>
 

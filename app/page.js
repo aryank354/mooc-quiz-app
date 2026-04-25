@@ -70,6 +70,7 @@ export default function Home() {
           questions={quizQuestions}
           isTimed={isTimedMode}
           onComplete={handleQuizComplete}
+          onExit={handleRestart}
         />
       )}
       {stage === 'result' && (

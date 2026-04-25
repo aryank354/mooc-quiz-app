@@ -537,7 +537,7 @@ export const oopsQuestions = [
     question: "What is required for method overriding in polymorphism?", 
     options: ["The method must have the same name but different parameters.", "The method must have the same name, return type, and parameters in a parent and child class.", "The method must be marked as static.", "The method must be private in the base class."], 
     correctAnswer: 1 
-  },,
+  },
   // OOPs Week 6
 // OOPs Week 6
   { 
@@ -599,7 +599,7 @@ export const oopsQuestions = [
     question: "Which of the following statements about the throws keyword in Java is correct?", 
     options: ["The throws keyword must be used for all exceptions, including unchecked exceptions like NullPointerException.", "The throws keyword is used in the method signature to declare checked exceptions that a method might throw, allowing the caller to handle them.", "The throws keyword is used to catch and handle exceptions within a method.", "The throws keyword automatically handles the exception without requiring a try-catch block."], 
     correctAnswer: 1 
-  },,
+  },
   // OOPs Week 7
 // OOPs Week 7
   { 
